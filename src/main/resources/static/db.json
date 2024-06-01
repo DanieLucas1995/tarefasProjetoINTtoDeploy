@@ -1,0 +1,84 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "name": "Exemplo de Jogo 1",
+      "genre": "Aventura"
+    },
+    {
+      "id": "2",
+      "name": "Exemplo de Jogo 2",
+      "genre": "Estratégia"
+    },
+    {
+      "id": "0936",
+      "name": "Red Dead",
+      "genre": "Action",
+      "releaseDate": "2018-10-18",
+      "platforms": "PC",
+      "priorityRate": "Low",
+      "user": "New Register",
+      "description": "AAAAA"
+    },
+    {
+      "id": "e0e7",
+      "name": "Red Dead 2",
+      "genre": "Action",
+      "releaseDate": "2018-10-18",
+      "platforms": "PC",
+      "priorityRate": "Low",
+      "user": "New Register",
+      "description": "AAAAA"
+    },
+    {
+      "id": "89a8",
+      "name": "Red Dead 2",
+      "genre": "Action",
+      "releaseDate": "2018-10-18",
+      "platforms": "PC",
+      "priorityRate": "Low",
+      "user": "New Register",
+      "description": "AAAAA"
+    },
+    {
+      "id": "59f5",
+      "name": "Red Dead 4",
+      "genre": "Action",
+      "releaseDate": "2024-05-01",
+      "platforms": "PC",
+      "priorityRate": "Medium",
+      "user": "New Register",
+      "description": "aaa"
+    },
+    {
+      "id": "7b39",
+      "name": "Red Dead 6",
+      "genre": "Action",
+      "releaseDate": "2024-05-24",
+      "platforms": "PC",
+      "priorityRate": "High",
+      "user": "New Register",
+      "description": "ççç"
+    },
+    {
+      "id": "80cb",
+      "name": "Gran Turismo",
+      "genre": "Race",
+      "releaseDate": "2024-04-30",
+      "platforms": "PC",
+      "priorityRate": "High",
+      "user": "New Register",
+      "description": "ggg"
+    },
+    {
+      "id": "5fd3",
+      "name": "Gran Turismo 2",
+      "genre": "Race",
+      "releaseDate": "2024-04-30",
+      "platforms": "PC",
+      "priorityRate": "High",
+      "user": "New Register",
+      "description": "ggg"
+    }
+  ]
+}

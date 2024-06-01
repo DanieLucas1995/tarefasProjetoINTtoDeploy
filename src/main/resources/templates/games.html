@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Jogos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-inner {
+            display: inline-block;
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-inner label {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .form-inner input,
+        .form-inner textarea,
+        .form-inner select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+
+        .form-inner select {
+            width: calc(100% - 20px);
+        }
+
+        .form-inner div:last-child {
+            text-align: center;
+        }
+
+        .btn {
+            font-size: 20px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-send {
+            background-color: #90ee90; /* Verde claro */
+            color: #fff;
+        }
+
+        .btn-cancel {
+            background-color: #f08080; /* Vermelho claro */
+            color: #fff;
+        }
+
+        .btn-checkin {
+            background-color: #ffd700; /* Amarelo */
+            color: #fff;
+        }
+
+        .btn:first-child {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="gameForm" action="/saveGame" method="post">
+            <div class="form-inner">
+                <label><b>Game Name</b></label>
+                <input type="text" name="gameName" placeholder="Nome do Jogo" required>
+            
+                <label><b>Gender</b></label>
+                <input type="text" name="genre" placeholder="Gênero" required>
+            
+                <label><b>Release Date</b></label>
+                <input type="date" name="releaseDate" placeholder="Data de Lançamento" required>
+
+                <label><b>Plataforms</b></label>
+                <select name="platform" required>
+                    <option value="PlayStation 4">PlayStation 4</option>
+                    <option value="PlayStation 5">PlayStation 5</option>
+                    <option value="Switch">Switch</option>
+                    <option value="Xbox One">Xbox One</option>
+                    <option value="Xbox Series">Xbox Series</option>
+                    <option value="PC">PC (Personal Computer)</option>
+                    <option value="Mobile">Mobile (iOS e Android)</option>
+                </select>
+
+                <label><b>Priority Rate</b></label>
+                <select name="priorityRate" required>
+                    <option value="0">0 Star(s) - Low Priority</option>
+                    <option value="1">1 Star(s) - Low-Medium Priority</option>
+                    <option value="2">2 Star(s) - Medium Priority</option>
+                    <option value="3">3 Star(s) - Medium-High Priority</option>
+                    <option value="4">4 Star(s) - High Priority</option>
+                    <option value="5">5 Star(s) - Critical Priority</option>
+                </select>
+
+                <label><b>Description</b></label>
+                <textarea name="description" placeholder="Descrição do Jogo" required></textarea>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-send">Send</button>
+                    <button type="reset" class="btn btn-cancel">Cancel</button>
+                    <button type="button" class="btn btn-checkin" onclick="location.href='/checkin'">Check-in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    document.getElementById('gameForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the default form submission
+
+        const formData = new FormData(this); // Collects form data
+        submitFormData(formData); // Calls the function to submit form data
+    });
+
+    function submitFormData(formData) {
+        fetch('/games/add', { // Corrected endpoint to match the controller
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error sending form data.');
+            }
+            // Shows the success alert
+            alert('Game successfully saved in the database.');
+        })
+        .catch(error => {
+            console.error('Error sending form data:', error);
+            // Handle the error here, such as displaying an error message to the user
+            alert('Error sending form data. Please try again later.');
+        });
+    }
+</script>
+
+</body>
+</html>
+

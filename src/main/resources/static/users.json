@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "0411",
+      "Name": "SS",
+      "user_Name": "fff",
+      "Gender": "SS",
+      "Age": "22",
+      "Email": "fff@gmail.com",
+      "Password": "22",
+      "Phone_Number": "222",
+      "City": "s",
+      "Nationality": "s",
+      "Date_Joined": "2024-05-24",
+      "Bio": "fff",
+      "Access_Type": "Administrator",
+      "Company_idCompany": ""
+    },
+    {
+      "id": "fa64",
+      "Name": "dd",
+      "user_Name": "SSS",
+      "Gender": "Masculino",
+      "Age": "1",
+      "Email": "fff@gmail.com",
+      "Password": "22",
+      "Phone_Number": "22",
+      "City": "ff",
+      "Nationality": "GG",
+      "Date_Joined": "2024-05-10",
+      "Bio": "fff",
+      "Access_Type": "Administrator",
+      "Company_idCompany": ""
+    }
+  ]
+}
